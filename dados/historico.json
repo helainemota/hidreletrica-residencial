@@ -1,0 +1,660 @@
+[
+    {
+        "nivel": 64,
+        "vazao": 9.5,
+        "temperatura": 38.6,
+        "rpm": 1556,
+        "tensao": 211.5,
+        "corrente": 10.4,
+        "potencia": 2.2,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:02:30"
+    },
+    {
+        "nivel": 71,
+        "vazao": 9.6,
+        "temperatura": 40.1,
+        "rpm": 1490,
+        "tensao": 222.5,
+        "corrente": 13.3,
+        "potencia": 2.96,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:02:48"
+    },
+    {
+        "nivel": 60,
+        "vazao": 10.9,
+        "temperatura": 36.2,
+        "rpm": 1484,
+        "tensao": 216.7,
+        "corrente": 9.2,
+        "potencia": 1.99,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:02:49"
+    },
+    {
+        "nivel": 95,
+        "vazao": 12.3,
+        "temperatura": 54.0,
+        "rpm": 1337,
+        "tensao": 223.0,
+        "corrente": 10.2,
+        "potencia": 2.27,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 54.0 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:02:50"
+    },
+    {
+        "nivel": 99,
+        "vazao": 12.5,
+        "temperatura": 40.3,
+        "rpm": 1406,
+        "tensao": 214.7,
+        "corrente": 10.5,
+        "potencia": 2.25,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:02:52"
+    },
+    {
+        "nivel": 47,
+        "vazao": 13.0,
+        "temperatura": 43.9,
+        "rpm": 1349,
+        "tensao": 212.4,
+        "corrente": 11.5,
+        "potencia": 2.44,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 47%."
+            }
+        ],
+        "horario": "01/10/2026 22:02:52"
+    },
+    {
+        "nivel": 47,
+        "vazao": 15.0,
+        "temperatura": 36.7,
+        "rpm": 1209,
+        "tensao": 227.4,
+        "corrente": 13.2,
+        "potencia": 3.0,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 47%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1209 RPM."
+            }
+        ],
+        "horario": "01/10/2026 22:02:54"
+    },
+    {
+        "nivel": 98,
+        "vazao": 10.4,
+        "temperatura": 52.0,
+        "rpm": 1550,
+        "tensao": 225.4,
+        "corrente": 13.4,
+        "potencia": 3.02,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 52.0 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:02:56"
+    },
+    {
+        "nivel": 48,
+        "vazao": 14.8,
+        "temperatura": 48.6,
+        "rpm": 1451,
+        "tensao": 228.3,
+        "corrente": 13.6,
+        "potencia": 3.1,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 48%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Temperatura acima do recomendado",
+                "mensagem": "A temperatura está em 48.6 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:05:13"
+    },
+    {
+        "nivel": 98,
+        "vazao": 15.0,
+        "temperatura": 48.1,
+        "rpm": 1348,
+        "tensao": 213.5,
+        "corrente": 13.6,
+        "potencia": 2.9,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Temperatura acima do recomendado",
+                "mensagem": "A temperatura está em 48.1 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:05:26"
+    },
+    {
+        "nivel": 25,
+        "vazao": 10.7,
+        "temperatura": 45.0,
+        "rpm": 1233,
+        "tensao": 212.9,
+        "corrente": 13.6,
+        "potencia": 2.9,
+        "status": "CRÍTICO",
+        "classe_status": "critico",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Nível do reservatório crítico",
+                "mensagem": "O nível do reservatório está em 25%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1233 RPM."
+            }
+        ],
+        "horario": "01/10/2026 22:05:30"
+    },
+    {
+        "nivel": 50,
+        "vazao": 9.4,
+        "temperatura": 37.6,
+        "rpm": 1574,
+        "tensao": 229.4,
+        "corrente": 10.3,
+        "potencia": 2.36,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 50%."
+            }
+        ],
+        "horario": "01/10/2026 22:05:34"
+    },
+    {
+        "nivel": 38,
+        "vazao": 8.0,
+        "temperatura": 52.4,
+        "rpm": 1468,
+        "tensao": 230.0,
+        "corrente": 11.6,
+        "potencia": 2.67,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 38%."
+            },
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 52.4 °C."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.0 L/s."
+            }
+        ],
+        "horario": "01/10/2026 22:05:36"
+    },
+    {
+        "nivel": 85,
+        "vazao": 11.6,
+        "temperatura": 46.8,
+        "rpm": 1280,
+        "tensao": 212.5,
+        "corrente": 13.5,
+        "potencia": 2.87,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Temperatura acima do recomendado",
+                "mensagem": "A temperatura está em 46.8 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:05:38"
+    },
+    {
+        "nivel": 57,
+        "vazao": 8.7,
+        "temperatura": 54.0,
+        "rpm": 1222,
+        "tensao": 216.0,
+        "corrente": 10.2,
+        "potencia": 2.2,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 57%."
+            },
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 54.0 °C."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.7 L/s."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1222 RPM."
+            }
+        ],
+        "horario": "01/10/2026 22:05:39"
+    },
+    {
+        "nivel": 43,
+        "vazao": 9.7,
+        "temperatura": 40.4,
+        "rpm": 1200,
+        "tensao": 219.7,
+        "corrente": 10.2,
+        "potencia": 2.24,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 43%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1200 RPM."
+            }
+        ],
+        "horario": "01/10/2026 22:05:41"
+    },
+    {
+        "nivel": 25,
+        "vazao": 9.6,
+        "temperatura": 41.8,
+        "rpm": 1488,
+        "tensao": 215.0,
+        "corrente": 9.3,
+        "potencia": 2.0,
+        "status": "CRÍTICO",
+        "classe_status": "critico",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Nível do reservatório crítico",
+                "mensagem": "O nível do reservatório está em 25%."
+            }
+        ],
+        "horario": "01/10/2026 22:05:44"
+    },
+    {
+        "nivel": 81,
+        "vazao": 11.0,
+        "temperatura": 43.1,
+        "rpm": 1317,
+        "tensao": 212.5,
+        "corrente": 12.8,
+        "potencia": 2.72,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:05:46"
+    },
+    {
+        "nivel": 82,
+        "vazao": 13.1,
+        "temperatura": 49.5,
+        "rpm": 1587,
+        "tensao": 225.8,
+        "corrente": 8.2,
+        "potencia": 1.85,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Temperatura acima do recomendado",
+                "mensagem": "A temperatura está em 49.5 °C."
+            }
+        ],
+        "horario": "01/10/2026 22:05:47"
+    },
+    {
+        "nivel": 73,
+        "vazao": 14.0,
+        "temperatura": 35.5,
+        "rpm": 1441,
+        "tensao": 214.4,
+        "corrente": 12.1,
+        "potencia": 2.59,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [],
+        "horario": "01/10/2026 22:05:49"
+    },
+    {
+        "nivel": 80,
+        "vazao": 10.8,
+        "temperatura": 52.5,
+        "rpm": 1400,
+        "tensao": 210.4,
+        "corrente": 9.9,
+        "potencia": 2.08,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 52.5 °C."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 22:09:28"
+    },
+    {
+        "nivel": 47,
+        "vazao": 8.2,
+        "temperatura": 44.0,
+        "rpm": 1440,
+        "tensao": 218.4,
+        "corrente": 9.2,
+        "potencia": 2.01,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 47%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.2 L/s."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 22:13:08"
+    },
+    {
+        "nivel": 47,
+        "vazao": 9.3,
+        "temperatura": 41.5,
+        "rpm": 1587,
+        "tensao": 211.9,
+        "corrente": 8.5,
+        "potencia": 1.8,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 47%."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 22:13:55"
+    },
+    {
+        "nivel": 81,
+        "vazao": 14.2,
+        "temperatura": 52.2,
+        "rpm": 1270,
+        "tensao": 213.3,
+        "corrente": 11.0,
+        "potencia": 2.35,
+        "status": "NORMAL",
+        "classe_status": "normal",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 52.2 °C."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 22:57:51"
+    },
+    {
+        "nivel": 34,
+        "vazao": 10.3,
+        "temperatura": 43.7,
+        "rpm": 1548,
+        "tensao": 227.1,
+        "corrente": 11.0,
+        "potencia": 2.5,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 34%."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 23:04:10"
+    },
+    {
+        "nivel": 42,
+        "vazao": 11.6,
+        "temperatura": 51.5,
+        "rpm": 1580,
+        "tensao": 228.6,
+        "corrente": 10.5,
+        "potencia": 2.4,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 42%."
+            },
+            {
+                "tipo": "critico",
+                "titulo": "Temperatura elevada",
+                "mensagem": "A temperatura está em 51.5 °C."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 23:04:14"
+    },
+    {
+        "nivel": 39,
+        "vazao": 8.2,
+        "temperatura": 39.2,
+        "rpm": 1316,
+        "tensao": 220.1,
+        "corrente": 11.7,
+        "potencia": 2.58,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 39%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.2 L/s."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 23:08:51"
+    },
+    {
+        "nivel": 29,
+        "vazao": 8.9,
+        "temperatura": 40.4,
+        "rpm": 1166,
+        "tensao": 212.1,
+        "corrente": 10.9,
+        "potencia": 2.31,
+        "status": "CRÍTICO",
+        "classe_status": "critico",
+        "alertas": [
+            {
+                "tipo": "critico",
+                "titulo": "Nível do reservatório crítico",
+                "mensagem": "O nível do reservatório está em 29%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.9 L/s."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1166 RPM."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "atencao",
+                "titulo": "Possível redução da disponibilidade hidráulica",
+                "mensagem": "O nível do reservatório e a vazão estão abaixo dos valores de referência do protótipo."
+            }
+        ],
+        "horario": "01/10/2026 23:12:35"
+    },
+    {
+        "nivel": 32,
+        "vazao": 8.1,
+        "temperatura": 41.6,
+        "rpm": 1219,
+        "tensao": 228.5,
+        "corrente": 10.4,
+        "potencia": 2.38,
+        "status": "ATENÇÃO",
+        "classe_status": "atencao",
+        "alertas": [
+            {
+                "tipo": "atencao",
+                "titulo": "Nível do reservatório baixo",
+                "mensagem": "O nível do reservatório está em 32%."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Vazão reduzida",
+                "mensagem": "A vazão atual é de 8.1 L/s."
+            },
+            {
+                "tipo": "atencao",
+                "titulo": "Rotação reduzida",
+                "mensagem": "A rotação atual é de 1219 RPM."
+            }
+        ],
+        "diagnosticos": [
+            {
+                "tipo": "normal",
+                "titulo": "Condições operacionais estáveis",
+                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
+            }
+        ],
+        "horario": "01/10/2026 23:12:56"
+    }
+]

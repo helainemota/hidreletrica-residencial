@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Alertas</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/alertas.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">H</div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/">Visão geral</a>
+        <a href="/energia">Energia</a>
+        <a href="/equipamentos">Equipamentos</a>
+        <a href="/alertas" class="active">Alertas</a>
+        <a href="/historico">Histórico</a>
+        <a href="/manutencao">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <span class="eyebrow">ALERTAS</span>
+
+        <h1>
+            Situações do sistema
+        </h1>
+
+        <p>
+            Condições identificadas durante o monitoramento.
+        </p>
+
+    </section>
+
+
+    <section class="alert-summary">
+
+        <div>
+            <span>STATUS GERAL</span>
+
+            <strong class="{{ dados.classe_status }}">
+                {{ dados.status }}
+            </strong>
+        </div>
+
+        <div>
+            <span>OCORRÊNCIAS</span>
+
+            <strong>
+                {{ dados.alertas|length }}
+            </strong>
+        </div>
+
+    </section>
+
+
+    <section class="alert-page-list">
+
+        {% for alerta in dados.alertas %}
+
+        <article class="full-alert {{ alerta.tipo }}">
+
+            <div class="full-alert-icon">
+
+                {% if alerta.tipo == "normal" %}
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 12.5l4 4L19 6.5"/>
+                </svg>
+
+                {% else %}
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 8v5"/>
+                    <path d="M12 17h.01"/>
+                    <path d="M10.3 3.8L2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/>
+                </svg>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="full-alert-content">
+
+                <div class="full-alert-header">
+
+                    <strong>
+                        {{ alerta.titulo }}
+                    </strong>
+
+                    <span>
+                        {{ alerta.tipo|upper }}
+                    </span>
+
+                </div>
+
+                <p>
+                    {{ alerta.mensagem }}
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+
+    <section class="alert-reference">
+
+        <span class="eyebrow">PARÂMETROS MONITORADOS</span>
+
+        <div class="alert-reference-grid">
+
+            <div>
+                <span>Reservatório</span>
+                <strong>{{ dados.nivel_reservatorio }}%</strong>
+            </div>
+
+            <div>
+                <span>Vazão</span>
+                <strong>{{ dados.vazao_atual }} L/s</strong>
+            </div>
+
+            <div>
+                <span>Potência</span>
+                <strong>{{ dados.potencia_atual }} W</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

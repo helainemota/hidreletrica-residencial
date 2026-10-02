@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Manutenção</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/manutencao.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">H</div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/">Visão geral</a>
+        <a href="/energia">Energia</a>
+        <a href="/equipamentos">Equipamentos</a>
+        <a href="/alertas">Alertas</a>
+        <a href="/historico">Histórico</a>
+        <a href="/manutencao" class="active">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <span class="eyebrow">MANUTENÇÃO</span>
+
+        <h1>
+            Acompanhamento preventivo
+        </h1>
+
+        <p>
+            Recomendações geradas a partir das condições
+            monitoradas.
+        </p>
+
+    </section>
+
+    <section class="maintenance-list">
+
+        {% for manutencao in manutencoes %}
+
+        <article class="maintenance-card {{ manutencao.classe }}">
+
+            <div class="maintenance-icon">
+
+                {% if manutencao.equipamento == "Reservatório" %}
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3C9 7 6 10.5 6 14a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/>
+                </svg>
+
+                {% elif manutencao.equipamento == "Sistema hidráulico" %}
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12h16"/>
+                    <path d="M13 5l7 7-7 7"/>
+                </svg>
+
+                {% else %}
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v4"/>
+                    <path d="M12 18v4"/>
+                    <path d="M2 12h4"/>
+                    <path d="M18 12h4"/>
+                    <path d="M4.9 4.9l2.8 2.8"/>
+                    <path d="M16.3 16.3l2.8 2.8"/>
+                </svg>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="maintenance-content">
+
+                <div class="maintenance-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            COMPONENTE
+                        </span>
+
+                        <h2>
+                            {{ manutencao.equipamento }}
+                        </h2>
+                    </div>
+
+                    <span class="priority-badge">
+                        {{ manutencao.prioridade }}
+                    </span>
+
+                </div>
+
+
+                <p>
+                    {{ manutencao.descricao }}
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+
+    <section class="maintenance-flow">
+
+        <span class="eyebrow">FLUXO DE ACOMPANHAMENTO</span>
+
+        <div class="flow">
+
+            <div>
+                <span>01</span>
+                <strong>Monitorar</strong>
+                <small>Coletar parâmetros</small>
+            </div>
+
+            <i></i>
+
+            <div>
+                <span>02</span>
+                <strong>Analisar</strong>
+                <small>Comparar referências</small>
+            </div>
+
+            <i></i>
+
+            <div>
+                <span>03</span>
+                <strong>Alertar</strong>
+                <small>Identificar condição</small>
+            </div>
+
+            <i></i>
+
+            <div>
+                <span>04</span>
+                <strong>Verificar</strong>
+                <small>Avaliar manutenção</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="reference-panel">
+
+        <span class="eyebrow">
+            REFERÊNCIAS DO PROJETO
+        </span>
+
+        <div class="reference-grid">
+
+            <div>
+                <span>Vazão</span>
+                <strong>{{ dados.vazao_referencia }} L/s</strong>
+            </div>
+
+            <div>
+                <span>Desnível</span>
+                <strong>{{ dados.desnivel }} m</strong>
+            </div>
+
+            <div>
+                <span>Rendimento</span>
+                <strong>{{ dados.rendimento * 100 }}%</strong>
+            </div>
+
+            <div>
+                <span>Potência de referência</span>
+                <strong>{{ dados.potencia_referencia_kw }} kW</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

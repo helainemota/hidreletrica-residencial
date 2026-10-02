@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Visão geral</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">
+            H
+        </div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/" class="active">Visão geral</a>
+        <a href="/energia">Energia</a>
+        <a href="/equipamentos">Equipamentos</a>
+        <a href="/alertas">Alertas</a>
+        <a href="/historico">Histórico</a>
+        <a href="/manutencao">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span class="indicator-dot"></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div>
+            <span class="eyebrow">VISÃO GERAL</span>
+
+            <h1>
+                Acompanhamento do sistema
+            </h1>
+
+            <p>
+                Consulte os principais parâmetros da geração
+                hidrelétrica residencial.
+            </p>
+        </div>
+
+        <div class="last-update">
+            <span>ÚLTIMA ATUALIZAÇÃO</span>
+            <strong>{{ dados.horario }}</strong>
+        </div>
+
+    </section>
+
+    <section class="status-card {{ dados.classe_status }}">
+
+        <div class="status-symbol">
+
+            {% if dados.classe_status == "normal" %}
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12.5l4 4L19 6.5"/>
+            </svg>
+
+            {% else %}
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 8v5"/>
+                <path d="M12 17h.01"/>
+                <path d="M10.3 3.8L2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/>
+            </svg>
+
+            {% endif %}
+
+        </div>
+
+        <div class="status-content">
+
+            <span class="status-label">
+                STATUS DO SISTEMA
+            </span>
+
+            <h2>
+                {{ dados.status }}
+            </h2>
+
+            <p>
+                {% if dados.classe_status == "normal" %}
+                    Os parâmetros monitorados estão dentro
+                    das faixas utilizadas nesta simulação.
+                {% elif dados.classe_status == "atencao" %}
+                    Existem parâmetros que precisam de
+                    acompanhamento.
+                {% else %}
+                    Existem parâmetros que exigem atenção.
+                {% endif %}
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="metric-grid">
+
+        <article class="metric-card blue">
+
+            <span class="metric-line"></span>
+
+            <div class="metric-header">
+                <span>NÍVEL DO RESERVATÓRIO</span>
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 3C9 7 6 10.5 6 14a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/>
+                </svg>
+            </div>
+
+            <strong>
+                {{ dados.nivel_reservatorio }}<small>%</small>
+            </strong>
+
+            <p>
+                {{ dados.analise_nivel.status }}
+            </p>
+
+        </article>
+
+
+        <article class="metric-card teal">
+
+            <span class="metric-line"></span>
+
+            <div class="metric-header">
+                <span>VAZÃO</span>
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 12h16"/>
+                    <path d="M13 5l7 7-7 7"/>
+                </svg>
+            </div>
+
+            <strong>
+                {{ dados.vazao_atual }}<small> L/s</small>
+            </strong>
+
+            <p>
+                Referência: {{ dados.vazao_referencia }} L/s
+            </p>
+
+        </article>
+
+
+        <article class="metric-card cyan">
+
+            <span class="metric-line"></span>
+
+            <div class="metric-header">
+                <span>POTÊNCIA ATUAL</span>
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+                </svg>
+            </div>
+
+            <strong>
+                {{ dados.potencia_atual_kw }}<small> kW</small>
+            </strong>
+
+            <p>
+                Referência: {{ dados.potencia_referencia_kw }} kW
+            </p>
+
+        </article>
+
+
+        <article class="metric-card lime">
+
+            <span class="metric-line"></span>
+
+            <div class="metric-header">
+                <span>GERAÇÃO HOJE</span>
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 19V5"/>
+                    <path d="M4 19h16"/>
+                    <path d="M7 15l3-4 3 2 5-7"/>
+                </svg>
+            </div>
+
+            <strong>
+                {{ dados.energia_hoje }}<small> kWh</small>
+            </strong>
+
+            <p>
+                Valor simulado
+            </p>
+
+        </article>
+
+    </section>
+
+
+    <section class="content-grid">
+
+        <article class="panel">
+
+            <div class="panel-heading">
+                <div>
+                    <span class="eyebrow">ACOMPANHAMENTO</span>
+                    <h2>Geração × consumo</h2>
+                </div>
+
+                <a href="/energia">
+                    Ver energia
+                </a>
+            </div>
+
+            <div class="comparison">
+
+                <div class="comparison-item">
+
+                    <div class="comparison-title">
+                        <span>Geração de referência</span>
+                        <strong>
+                            {{ dados.energia_diaria_referencia }} kWh/dia
+                        </strong>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill generation"
+                            style="width: 100%;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="comparison-item">
+
+                    <div class="comparison-title">
+                        <span>Consumo de referência</span>
+                        <strong>
+                            {{ dados.consumo_diario }} kWh/dia
+                        </strong>
+                    </div>
+
+                    <div class="bar">
+                        <div
+                            class="bar-fill consumption"
+                            style="width: 92.84%;">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="comparison-result">
+
+                <span>ATENDIMENTO TEÓRICO</span>
+
+                <strong>
+                    {{ dados.cobertura_referencia }}%
+                </strong>
+
+                <p>
+                    Excedente teórico:
+                    {{ dados.excedente_referencia }} kWh/mês
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="eyebrow">SITUAÇÃO</span>
+                    <h2>Parâmetros</h2>
+                </div>
+
+            </div>
+
+
+            <div class="parameter-list">
+
+                <div>
+                    <span>Reservatório</span>
+                    <strong class="{{ dados.analise_nivel.classe }}">
+                        {{ dados.analise_nivel.status }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Vazão</span>
+                    <strong class="{{ dados.analise_vazao.classe }}">
+                        {{ dados.analise_vazao.status }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Potência</span>
+                    <strong class="{{ dados.analise_potencia.classe }}">
+                        {{ dados.analise_potencia.status }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <section class="panel alerts-panel">
+
+        <div class="panel-heading">
+
+            <div>
+                <span class="eyebrow">ACOMPANHAMENTO</span>
+                <h2>Alertas recentes</h2>
+            </div>
+
+            <a href="/alertas">
+                Ver todos
+            </a>
+
+        </div>
+
+
+        <div class="alert-list">
+
+            {% for alerta in dados.alertas %}
+
+            <div class="alert-item {{ alerta.tipo }}">
+
+                <span class="alert-marker"></span>
+
+                <div>
+                    <strong>
+                        {{ alerta.titulo }}
+                    </strong>
+
+                    <p>
+                        {{ alerta.mensagem }}
+                    </p>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <section class="quick-section">
+
+        <span class="eyebrow">ACESSO RÁPIDO</span>
+
+        <div class="quick-grid">
+
+            <a href="/energia" class="quick-card">
+                <span>01</span>
+                <strong>Energia</strong>
+                <small>Geração e consumo</small>
+            </a>
+
+            <a href="/equipamentos" class="quick-card">
+                <span>02</span>
+                <strong>Equipamentos</strong>
+                <small>Estado dos componentes</small>
+            </a>
+
+            <a href="/historico" class="quick-card">
+                <span>03</span>
+                <strong>Histórico</strong>
+                <small>Registros do sistema</small>
+            </a>
+
+            <a href="/manutencao" class="quick-card">
+                <span>04</span>
+                <strong>Manutenção</strong>
+                <small>Acompanhamento preventivo</small>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

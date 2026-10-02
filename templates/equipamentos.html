@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Equipamentos</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/equipamentos.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">H</div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/">Visão geral</a>
+        <a href="/energia">Energia</a>
+        <a href="/equipamentos" class="active">Equipamentos</a>
+        <a href="/alertas">Alertas</a>
+        <a href="/historico">Histórico</a>
+        <a href="/manutencao">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <span class="eyebrow">EQUIPAMENTOS</span>
+
+        <h1>
+            Estado dos componentes
+        </h1>
+
+        <p>
+            Acompanhe os principais elementos envolvidos
+            na geração de energia.
+        </p>
+
+    </section>
+
+
+    <section class="equipment-grid">
+
+        {% for equipamento in equipamentos %}
+
+        <article class="equipment-card {{ equipamento.classe }}">
+
+            <div class="equipment-top">
+
+                <div class="equipment-icon">
+
+                    {% if loop.index == 1 %}
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3C9 7 6 10.5 6 14a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/>
+                    </svg>
+
+                    {% elif loop.index == 2 %}
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 12h16"/>
+                        <path d="M13 5l7 7-7 7"/>
+                    </svg>
+
+                    {% elif loop.index == 3 %}
+
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v4"/>
+                        <path d="M12 18v4"/>
+                        <path d="M2 12h4"/>
+                        <path d="M18 12h4"/>
+                        <path d="M4.9 4.9l2.8 2.8"/>
+                        <path d="M16.3 16.3l2.8 2.8"/>
+                        <path d="M19.1 4.9l-2.8 2.8"/>
+                        <path d="M7.7 16.3l-2.8 2.8"/>
+                    </svg>
+
+                    {% else %}
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+                    </svg>
+
+                    {% endif %}
+
+                </div>
+
+                <span class="state">
+                    {{ equipamento.estado }}
+                </span>
+
+            </div>
+
+
+            <h2>
+                {{ equipamento.nome }}
+            </h2>
+
+
+            <div class="equipment-data">
+
+                {% for parametro in equipamento.parametros %}
+
+                <div>
+                    {{ parametro }}
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <div class="equipment-message">
+
+                {{ equipamento.mensagem }}
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+
+    <section class="system-flow">
+
+        <div class="flow-heading">
+
+            <span class="eyebrow">FLUXO DO SISTEMA</span>
+
+            <h2>
+                Da captação à geração
+            </h2>
+
+        </div>
+
+
+        <div class="flow">
+
+            <div class="flow-step">
+                <span>01</span>
+                <strong>Captação</strong>
+                <small>Coleta da água</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-step">
+                <span>02</span>
+                <strong>Condução</strong>
+                <small>Transporte do fluxo</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-step">
+                <span>03</span>
+                <strong>Turbina</strong>
+                <small>Energia mecânica</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-step">
+                <span>04</span>
+                <strong>Gerador</strong>
+                <small>Energia elétrica</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-step">
+                <span>05</span>
+                <strong>Devolução</strong>
+                <small>Retorno da água</small>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

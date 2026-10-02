@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Histórico</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/historico.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">H</div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/">Visão geral</a>
+        <a href="/energia">Energia</a>
+        <a href="/equipamentos">Equipamentos</a>
+        <a href="/alertas">Alertas</a>
+        <a href="/historico" class="active">Histórico</a>
+        <a href="/manutencao">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <span class="eyebrow">HISTÓRICO</span>
+
+        <h1>
+            Registros do sistema
+        </h1>
+
+        <p>
+            Consulte os dados registrados.
+        </p>
+
+    </section>
+
+
+    {% if registros %}
+
+    <section class="history-summary">
+
+        <div>
+            <span>REGISTROS</span>
+            <strong>{{ registros|length }}</strong>
+        </div>
+
+        <div>
+            <span>ÚLTIMO STATUS</span>
+            <strong>{{ registros[-1].status }}</strong>
+        </div>
+
+    </section>
+
+
+    <section class="table-panel">
+
+        <div class="panel-heading">
+
+            <div>
+                <span class="eyebrow">DADOS</span>
+                <h2>Últimos registros</h2>
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Horário</th>
+                        <th>Nível</th>
+                        <th>Vazão</th>
+                        <th>Potência</th>
+                        <th>Consumo</th>
+                        <th>Energia</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for registro in registros|reverse %}
+
+                    <tr>
+
+                        <td>
+                            {{ registro.horario }}
+                        </td>
+
+                        <td>
+                            {{ registro.nivel }}%
+                        </td>
+
+                        <td>
+                            {{ registro.vazao }} L/s
+                        </td>
+
+                        <td>
+                            {{ registro.potencia }} W
+                        </td>
+
+                        <td>
+                            {{ registro.consumo }}
+                        </td>
+
+                        <td>
+                            {{ registro.energia }} kWh
+                        </td>
+
+                        <td>
+
+                            <span class="table-status {{ 
+                                'normal' if registro.status == 'SISTEMA NORMAL'
+                                else 'atencao' if registro.status == 'ACOMPANHAMENTO NECESSÁRIO'
+                                else 'critico'
+                            }}">
+                                {{ registro.status }}
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    {% else %}
+
+    <section class="empty-state">
+
+        <div class="empty-symbol">
+            01
+        </div>
+
+        <span class="eyebrow">SEM REGISTROS</span>
+
+        <h2>
+            Ainda não existem dados históricos.
+        </h2>
+
+        <p>
+            Os registros serão armazenados quando a rota
+            de atualização for utilizada.
+        </p>
+
+    </section>
+
+    {% endif %}
+
+</main>
+
+</body>
+</html>

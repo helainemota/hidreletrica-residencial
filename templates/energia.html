@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidro Home | Energia</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/energia.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-mark">H</div>
+
+        <div>
+            <strong>HIDRO HOME</strong>
+            <span>Monitoramento residencial</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="/">Visão geral</a>
+        <a href="/energia" class="active">Energia</a>
+        <a href="/equipamentos">Equipamentos</a>
+        <a href="/alertas">Alertas</a>
+        <a href="/historico">Histórico</a>
+        <a href="/manutencao">Manutenção</a>
+    </nav>
+
+    <div class="system-indicator">
+        <span></span>
+        Sistema
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div>
+            <span class="eyebrow">ENERGIA</span>
+
+            <h1>
+                Geração e consumo
+            </h1>
+
+            <p>
+                Acompanhe a produção de energia.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="energy-highlight">
+
+        <div class="energy-main">
+
+            <span>GERAÇÃO DE REFERÊNCIA</span>
+
+            <strong>
+                {{ energia.energia_diaria }}
+                <small>kWh/dia</small>
+            </strong>
+
+            <p>
+                Considerando 15 horas de operação diária.
+            </p>
+
+        </div>
+
+
+        <div class="energy-side">
+
+            <div>
+                <span>CONSUMO DIÁRIO</span>
+                <strong>
+                    {{ energia.consumo_diario }} kWh
+                </strong>
+            </div>
+
+            <div>
+                <span>ATENDIMENTO TEÓRICO</span>
+                <strong>
+                    {{ energia.cobertura }}%
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="metric-grid">
+
+        <article class="metric-card blue">
+            <span></span>
+            <label>POTÊNCIA HIDRÁULICA</label>
+            <strong>
+                {{ energia.potencia_hidraulica }}
+                <small>W</small>
+            </strong>
+        </article>
+
+        <article class="metric-card teal">
+            <span></span>
+            <label>POTÊNCIA ELÉTRICA</label>
+            <strong>
+                {{ energia.potencia_eletrica }}
+                <small>W</small>
+            </strong>
+        </article>
+
+        <article class="metric-card cyan">
+            <span></span>
+            <label>GERAÇÃO MENSAL</label>
+            <strong>
+                {{ energia.energia_mensal }}
+                <small>kWh</small>
+            </strong>
+        </article>
+
+        <article class="metric-card lime">
+            <span></span>
+            <label>EXCEDENTE TEÓRICO</label>
+            <strong>
+                {{ energia.excedente }}
+                <small>kWh</small>
+            </strong>
+        </article>
+
+    </section>
+
+
+    <section class="comparison-panel">
+
+        <div class="panel-heading">
+
+            <div>
+                <span class="eyebrow">COMPARAÇÃO</span>
+                <h2>Geração × consumo mensal</h2>
+            </div>
+
+        </div>
+
+
+        <div class="comparison-chart">
+
+            <div class="chart-row">
+
+                <div class="chart-label">
+                    <span>Geração</span>
+                    <strong>
+                        {{ energia.energia_mensal }} kWh
+                    </strong>
+                </div>
+
+                <div class="chart-track">
+                    <div
+                        class="chart-fill generation"
+                        style="width: 100%;">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="chart-row">
+
+                <div class="chart-label">
+                    <span>Consumo</span>
+                    <strong>
+                        {{ energia.consumo_mensal }} kWh
+                    </strong>
+                </div>
+
+                <div class="chart-track">
+                    <div
+                        class="chart-fill consumption"
+                        style="width: 92.83%;">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <span>RESULTADO DO CENÁRIO</span>
+
+            <strong>
+                {{ energia.cobertura }}% de atendimento teórico
+            </strong>
+
+            <p>
+                O cálculo indica um excedente teórico de
+                {{ energia.excedente }} kWh/mês.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="reference-panel">
+
+        <div>
+            <span class="eyebrow">PARÂMETROS</span>
+            <h2>Referências utilizadas</h2>
+        </div>
+
+
+        <div class="reference-grid">
+
+            <div>
+                <span>Vazão</span>
+                <strong>{{ energia.vazao_ls }} L/s</strong>
+            </div>
+
+            <div>
+                <span>Desnível</span>
+                <strong>{{ energia.desnivel }} m</strong>
+            </div>
+
+            <div>
+                <span>Rendimento</span>
+                <strong>{{ energia.rendimento * 100 }}%</strong>
+            </div>
+
+            <div>
+                <span>Operação</span>
+                <strong>{{ energia.horas_operacao }} h/dia</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
