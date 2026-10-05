@@ -327,3 +327,157 @@ tbody tr:hover {
         border-top: 1px solid var(--border);
     }
 }
+
+/* ============================================================
+   INTERAÇÕES E ANIMAÇÕES — HIDRO HOME
+   ============================================================ */
+body {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .45s ease, transform .45s ease;
+}
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.touch-target {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+.touch-target:hover {
+    transform: translateY(-3px);
+}
+
+.touch-target.is-pressed {
+    transform: scale(.975) !important;
+}
+
+.touch-ripple {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(35, 137, 154, .20);
+    transform: translate(-50%, -50%) scale(0);
+    animation: touchRipple .62s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes touchRipple {
+    to { transform: translate(-50%, -50%) scale(16); opacity: 0; }
+}
+
+@keyframes softPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(35, 137, 154, .08); }
+    50% { box-shadow: 0 0 0 8px rgba(35, 137, 154, .02); }
+}
+
+.system-indicator span,
+.indicator-dot {
+    animation: indicatorPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.55); opacity: .55; }
+}
+
+.number-pop {
+    animation: numberPop .55s ease both;
+}
+
+@keyframes numberPop {
+    from { opacity: 0; transform: translateY(8px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.is-loading {
+    pointer-events: none;
+    opacity: .7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+.history-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding: 22px 25px;
+    background: white;
+    border: 1px solid var(--border);
+}
+
+.history-actions h2 { font-size: 22px; }
+.history-actions p { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+.refresh-button {
+    border: 1px solid var(--teal);
+    background: var(--teal-dark);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.history-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.chart-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px;
+    min-width: 0;
+}
+
+.chart-wide { grid-column: 1 / -1; }
+
+.chart-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.chart-heading h2 { font-size: 19px; letter-spacing: -.025em; }
+.chart-unit { color: var(--teal-dark); font-size: 11px; font-weight: 700; background: #edf7f7; padding: 6px 9px; border-radius: 999px; }
+.chart-wrap { width: 100%; overflow: hidden; margin-top: 12px; }
+.chart-wrap svg { width: 100%; height: auto; display: block; min-height: 230px; }
+.chart-grid { stroke: #e6eeee; stroke-width: 1; stroke-dasharray: 4 5; }
+.chart-axis { fill: #7b868a; font-size: 9px; }
+.chart-area { fill: rgba(35,137,154,.08); }
+.chart-line { stroke: var(--teal); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; animation: drawLine 1.2s ease both; }
+.chart-line-alt { stroke: var(--teal-dark); }
+.chart-line-lime { stroke: var(--lime); }
+.chart-dot { fill: white; stroke: var(--teal); stroke-width: 2; cursor: pointer; transition: r .15s ease, fill .15s ease; }
+.chart-dot:hover { r: 8; fill: var(--cyan); }
+
+@keyframes drawLine { from { stroke-dasharray: 1200; stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }
+
+@media (max-width: 800px) {
+    .history-actions { align-items: flex-start; flex-direction: column; }
+    .history-charts { grid-template-columns: 1fr; }
+    .chart-wide { grid-column: auto; }
+}

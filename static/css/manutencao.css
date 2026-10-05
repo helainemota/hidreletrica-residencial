@@ -467,3 +467,86 @@ nav a:hover {
         margin-top: 8px;
     }
 }
+
+/* ============================================================
+   INTERAÇÕES E ANIMAÇÕES — HIDRO HOME
+   ============================================================ */
+body {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .45s ease, transform .45s ease;
+}
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.touch-target {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+.touch-target:hover {
+    transform: translateY(-3px);
+}
+
+.touch-target.is-pressed {
+    transform: scale(.975) !important;
+}
+
+.touch-ripple {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(35, 137, 154, .20);
+    transform: translate(-50%, -50%) scale(0);
+    animation: touchRipple .62s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes touchRipple {
+    to { transform: translate(-50%, -50%) scale(16); opacity: 0; }
+}
+
+@keyframes softPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(35, 137, 154, .08); }
+    50% { box-shadow: 0 0 0 8px rgba(35, 137, 154, .02); }
+}
+
+.system-indicator span,
+.indicator-dot {
+    animation: indicatorPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.55); opacity: .55; }
+}
+
+.number-pop {
+    animation: numberPop .55s ease both;
+}
+
+@keyframes numberPop {
+    from { opacity: 0; transform: translateY(8px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.is-loading {
+    pointer-events: none;
+    opacity: .7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

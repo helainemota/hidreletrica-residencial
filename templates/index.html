@@ -60,6 +60,8 @@
             </p>
         </div>
 
+        <button class="refresh-button" data-refresh type="button" aria-label="Atualizar dados do sistema">↻ Atualizar</button>
+
         <div class="last-update">
             <span>ÚLTIMA ATUALIZAÇÃO</span>
             <strong>{{ dados.horario }}</strong>
@@ -410,5 +412,6 @@
 
 </main>
 
+    <script src="{{ url_for('static', filename='js/interacoes.js') }}"></script>
 </body>
 </html>

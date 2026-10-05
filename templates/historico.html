@@ -60,6 +60,15 @@
 
     {% if registros %}
 
+    <section class="history-actions">
+        <div>
+            <span class="eyebrow">MONITORAMENTO</span>
+            <h2>Comportamento do sistema</h2>
+            <p>Toque ou passe o cursor sobre os gráficos para explorar os registros simulados.</p>
+        </div>
+        <button class="refresh-button" data-refresh type="button">↻ Registrar nova leitura</button>
+    </section>
+
     <section class="history-summary">
 
         <div>
@@ -74,6 +83,40 @@
 
     </section>
 
+    <section class="history-charts">
+        <article class="chart-card chart-wide">
+            <div class="chart-heading">
+                <div>
+                    <span class="eyebrow">GRÁFICO 01</span>
+                    <h2>Vazão ao longo do tempo</h2>
+                </div>
+                <span class="chart-unit">L/s</span>
+            </div>
+            <div class="chart-wrap"><svg id="vazaoChart" role="img" aria-label="Gráfico da vazão ao longo do tempo"></svg></div>
+        </article>
+
+        <article class="chart-card">
+            <div class="chart-heading">
+                <div>
+                    <span class="eyebrow">GRÁFICO 02</span>
+                    <h2>Potência</h2>
+                </div>
+                <span class="chart-unit">kW</span>
+            </div>
+            <div class="chart-wrap"><svg id="potenciaChart" role="img" aria-label="Gráfico da potência ao longo do tempo"></svg></div>
+        </article>
+
+        <article class="chart-card">
+            <div class="chart-heading">
+                <div>
+                    <span class="eyebrow">GRÁFICO 03</span>
+                    <h2>Nível do reservatório</h2>
+                </div>
+                <span class="chart-unit">%</span>
+            </div>
+            <div class="chart-wrap"><svg id="nivelChart" role="img" aria-label="Gráfico do nível do reservatório ao longo do tempo"></svg></div>
+        </article>
+    </section>
 
     <section class="table-panel">
 
@@ -128,18 +171,18 @@
                         </td>
 
                         <td>
-                            {{ registro.consumo }}
+                            {{ registro.consumo if registro.consumo is defined else "—" }}
                         </td>
 
                         <td>
-                            {{ registro.energia }} kWh
+                            {{ registro.energia if registro.energia is defined else "—" }} kWh
                         </td>
 
                         <td>
 
                             <span class="table-status {{ 
-                                'normal' if registro.status == 'SISTEMA NORMAL'
-                                else 'atencao' if registro.status == 'ACOMPANHAMENTO NECESSÁRIO'
+                                'normal' if registro.status in ['SISTEMA NORMAL', 'NORMAL']
+                                else 'atencao' if registro.status in ['ACOMPANHAMENTO NECESSÁRIO', 'ATENÇÃO', 'ATENCAO']
                                 else 'critico'
                             }}">
                                 {{ registro.status }}
@@ -184,5 +227,48 @@
 
 </main>
 
+    <script>
+(() => {
+    const raw = {{ registros|tojson }};
+    const records = raw.slice(-40).map((r, i) => {
+        let potencia = Number(r.potencia ?? 0);
+        // Registros antigos usam kW; os novos usam W.
+        if (potencia > 20) potencia = potencia / 1000;
+        return {
+            label: r.horario || `Registro ${i + 1}`,
+            vazao: Number(r.vazao ?? 0),
+            potencia,
+            nivel: Number(r.nivel ?? 0)
+        };
+    });
+
+    function drawChart(id, key, unit, lineClass) {
+        const svg = document.getElementById(id);
+        if (!svg || !records.length) return;
+        const width = 900, height = 300, pad = {top: 24, right: 24, bottom: 46, left: 48};
+        const w = width - pad.left - pad.right, h = height - pad.top - pad.bottom;
+        const values = records.map(r => r[key]);
+        const min = Math.min(...values), max = Math.max(...values);
+        const range = (max - min) || 1;
+        const x = i => pad.left + (records.length === 1 ? w / 2 : (i/(records.length-1))*w);
+        const y = v => pad.top + h - ((v-min)/range)*h;
+        const points = records.map((r,i)=>`${x(i)},${y(r[key])}`).join(' ');
+        const area = `${pad.left},${pad.top+h} ${points} ${x(records.length-1)},${pad.top+h}`;
+        const grid = [0,.25,.5,.75,1].map(t => {
+            const yy = pad.top+h-(t*h);
+            const val = min+(t*range);
+            return `<line x1="${pad.left}" y1="${yy}" x2="${pad.left+w}" y2="${yy}" class="chart-grid"/><text x="${pad.left-10}" y="${yy+4}" text-anchor="end" class="chart-axis">${val.toFixed(key==='potencia'?2:1)}</text>`;
+        }).join('');
+        const dots = records.map((r,i)=>`<circle cx="${x(i)}" cy="${y(r[key])}" r="5" class="chart-dot" data-index="${i}"><title>${r.label} — ${r[key].toFixed(key==='potencia'?2:1)} ${unit}</title></circle>`).join('');
+        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        svg.innerHTML = `${grid}<polygon points="${area}" class="chart-area"/><polyline points="${points}" class="${lineClass}" fill="none"/>${dots}<text x="${pad.left}" y="${height-12}" class="chart-axis">${records[0].label}</text><text x="${pad.left+w}" y="${height-12}" text-anchor="end" class="chart-axis">${records[records.length-1].label}</text>`;
+    }
+
+    drawChart('vazaoChart','vazao','L/s','chart-line');
+    drawChart('potenciaChart','potencia','kW','chart-line chart-line-alt');
+    drawChart('nivelChart','nivel','%','chart-line chart-line-lime');
+})();
+</script>
+<script src="{{ url_for('static', filename='js/interacoes.js') }}"></script>
 </body>
 </html>
