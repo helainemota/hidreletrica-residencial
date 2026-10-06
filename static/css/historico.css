@@ -11,6 +11,8 @@
     --success: #5f8d1e;
     --warning: #b18b18;
     --critical: #a64c48;
+
+    --radius: 12px;
 }
 
 * {
@@ -138,7 +140,7 @@ nav a:hover {
 }
 
 .page-header h1 {
-    font-size: clamp(32px, 4vw, 46px);
+    font-size: clamp(22px, 3vw, 34px);
     letter-spacing: -.04em;
 }
 
@@ -151,11 +153,10 @@ nav a:hover {
 .history-summary {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     background: white;
     border: 1px solid var(--border);
-
     margin-bottom: 20px;
+    border-radius: var(--radius);
 }
 
 .history-summary > div {
@@ -191,6 +192,7 @@ nav a:hover {
     background: white;
     border: 1px solid var(--border);
     padding: 27px;
+    border-radius: var(--radius);
 }
 
 .panel-heading h2 {
@@ -260,10 +262,9 @@ tbody tr:hover {
 .empty-state {
     background: white;
     border: 1px solid var(--border);
-
     text-align: center;
-
     padding: 70px 25px;
+    border-radius: var(--radius);
 }
 
 .empty-symbol {
@@ -419,6 +420,7 @@ body.page-leaving {
     padding: 22px 25px;
     background: white;
     border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .history-actions h2 { font-size: 22px; }
@@ -448,6 +450,7 @@ body.page-leaving {
     border: 1px solid var(--border);
     padding: 22px;
     min-width: 0;
+    border-radius: var(--radius);
 }
 
 .chart-wide { grid-column: 1 / -1; }

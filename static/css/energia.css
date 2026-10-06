@@ -9,6 +9,8 @@
     --lime: #a7c936;
     --olive: #7d901d;
     --border: #dce7e8;
+
+    --radius: 12px;
 }
 
 * {
@@ -125,7 +127,7 @@ nav a:hover {
 }
 
 .page-header h1 {
-    font-size: clamp(32px, 4vw, 46px);
+    font-size: clamp(22px, 3vw, 34px);
     letter-spacing: -.04em;
 }
 
@@ -164,11 +166,10 @@ nav a:hover {
 .energy-highlight {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-
     background: white;
     border: 1px solid var(--border);
-
     margin-bottom: 18px;
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .energy-main {
@@ -234,6 +235,7 @@ nav a:hover {
     border: 1px solid var(--border);
     padding: 23px;
     min-height: 145px;
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .metric-card > span {
@@ -288,6 +290,7 @@ nav a:hover {
     border: 1px solid var(--border);
     padding: 27px;
     margin-bottom: 20px;
+    border-radius: var(--radius);
 }
 
 .panel-heading h2,

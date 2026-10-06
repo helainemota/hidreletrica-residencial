@@ -12,6 +12,8 @@
     --warning: #b18b18;
     --critical: #a64c48;
     --success: #5f8d1e;
+
+    --radius: 12px;
 }
 
 * {
@@ -139,7 +141,7 @@ nav a:hover {
 }
 
 .page-header h1 {
-    font-size: clamp(32px, 4vw, 46px);
+    font-size: clamp(22px, 3vw, 34px);
     letter-spacing: -.04em;
 }
 
@@ -190,13 +192,11 @@ nav a:hover {
 .maintenance-card {
     display: flex;
     gap: 20px;
-
     background: white;
     border: 1px solid var(--border);
-
     border-left: 4px solid var(--teal);
-
     padding: 24px;
+    border-radius: var(--radius);
 }
 
 .maintenance-card.atencao {
@@ -302,9 +302,9 @@ nav a:hover {
 .maintenance-flow {
     background: white;
     border: 1px solid var(--border);
-
     margin-top: 20px;
     padding: 27px;
+    border-radius: var(--radius);
 }
 
 .flow {
@@ -370,9 +370,9 @@ nav a:hover {
 .reference-panel {
     background: white;
     border: 1px solid var(--border);
-
     margin-top: 20px;
     padding: 26px;
+    border-radius: var(--radius);
 }
 
 .reference-grid {
