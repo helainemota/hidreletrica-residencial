@@ -96,10 +96,24 @@
                         <path d="M7.7 16.3l-2.8 2.8"/>
                     </svg>
 
-                    {% else %}
+                    {% elif loop.index == 4 %}
 
                     <svg viewBox="0 0 24 24">
                         <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+                    </svg>
+
+                    {% else %}
+
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="M4.93 4.93l1.41 1.41"/>
+                        <path d="M17.66 17.66l1.41 1.41"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="M4.93 19.07l1.41-1.41"/>
+                        <path d="M17.66 6.34l1.41-1.41"/>
                     </svg>
 
                     {% endif %}

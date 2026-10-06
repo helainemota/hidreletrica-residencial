@@ -147,6 +147,23 @@ def calcular_referencia():
 
 
 # ============================================================
+# ESTADO PERSISTENTE DA SIMULAÇÃO
+# ============================================================
+# Mantém o nível e o estado da bomba entre chamadas,
+# replicando a lógica de histerese do Arduino:
+#   - Bomba PARA se level >= 99
+#   - Bomba LIGA se level < 95
+#   - Entre 95–98: mantém o estado anterior
+
+_estado_simulacao = {
+    "nivel": round(random.uniform(75, 90), 1),
+    "bomba_ativa": True,
+    "valvula": random.randint(88, 98),
+    "volume_total": 0.0
+}
+
+
+# ============================================================
 # SIMULAÇÃO DE MONITORAMENTO
 # ============================================================
 # Estes valores representam uma demonstração de como o sistema
@@ -159,32 +176,73 @@ def gerar_monitoramento():
 
     referencia = calcular_referencia()
 
-    # Pequenas variações para simular o comportamento do sistema
+    # --------------------------------------------------------
+    # NÍVEL DO RESERVATÓRIO — lógica fiel ao Arduino
+    # --------------------------------------------------------
+    # Quando a bomba está ligada, ela abastece o reservatório
+    # (nível sobe). Quando desligada, o consumo da turbina
+    # faz o nível cair gradualmente.
 
-    vazao_atual = round(
-        random.uniform(7.4, 8.4),
-        2
-    )
+    nivel_anterior = _estado_simulacao["nivel"]
+    bomba_ativa = _estado_simulacao["bomba_ativa"]
+    valvula = _estado_simulacao["valvula"]
+    volume_total = _estado_simulacao["volume_total"]
 
-    nivel_reservatorio = round(
-        random.uniform(65, 95),
+    if bomba_ativa:
+        variacao = random.uniform(0.5, 2.0)   # subindo
+    else:
+        variacao = random.uniform(-1.8, -0.3) # descendo
+
+    nivel_novo = round(
+        max(0.0, min(100.0, nivel_anterior + variacao)),
         1
     )
 
-    # A potência atual é relacionada à vazão simulada.
-    #
-    # Isso não representa um modelo físico completo.
-    # É apenas uma simulação para demonstrar o sistema.
+    # Histerese idêntica ao Arduino
+    if nivel_novo >= 99:
+        bomba_ativa = False
+    elif nivel_novo < 95:
+        bomba_ativa = True
+    # entre 95–98: mantém o estado anterior
 
-    fator_vazao = (
-        vazao_atual
-        / referencia["vazao_ls"]
-    )
+    # Válvula oscila levemente a cada leitura (simula ajuste do registro)
+    valvula = min(100, max(80, valvula + random.randint(-2, 2)))
+
+    _estado_simulacao["nivel"] = nivel_novo
+    _estado_simulacao["bomba_ativa"] = bomba_ativa
+    _estado_simulacao["valvula"] = valvula
+
+    nivel_reservatorio = nivel_novo
+
+    # --------------------------------------------------------
+    # VAZÃO — lógica fiel ao Arduino de vazão
+    # --------------------------------------------------------
+    # vazaoBase = map(valvula, 0, 100, 0, 8.0)
+    # variacao  = random.randint(-15, 15) / 100.0
+
+    vazao_base = (valvula / 100.0) * referencia["vazao_ls"]
+
+    if vazao_base > 0:
+        oscilacao = random.randint(-15, 16) / 100.0
+        vazao_atual = round(max(0.0, vazao_base + oscilacao), 2)
+    else:
+        vazao_atual = 0.0
+
+    # Acumula volume total (1 leitura ≈ 1 segundo, igual ao Arduino)
+    volume_total = round(volume_total + vazao_atual, 1)
+    _estado_simulacao["volume_total"] = volume_total
+
+    # --------------------------------------------------------
+    # POTÊNCIA — fórmula exata do Arduino atualizado
+    # --------------------------------------------------------
+    # Pel = (1000 * g * Q_m3s * H) * n
+    # Igual ao cálculo feito no loop() do Arduino
+
+    vazao_m3s = vazao_atual / 1000.0
 
     potencia_atual = round(
-        referencia["potencia_eletrica"]
-        * fator_vazao
-        * random.uniform(0.96, 1.02),
+        (1000.0 * GRAVIDADE * vazao_m3s * DESNIVEL_REFERENCIA)
+        * RENDIMENTO_GLOBAL,
         2
     )
 
@@ -211,6 +269,12 @@ def gerar_monitoramento():
     return {
         "nivel_reservatorio": nivel_reservatorio,
 
+        "bomba_ativa": bomba_ativa,
+
+        "valvula": valvula,
+
+        "volume_total": volume_total,
+
         "vazao_atual": vazao_atual,
 
         "potencia_atual": potencia_atual,
@@ -235,7 +299,7 @@ def gerar_monitoramento():
 
 def analisar_nivel(nivel):
 
-    if nivel >= 70:
+    if nivel >= 60:
 
         return {
             "status": "NORMAL",
@@ -246,7 +310,7 @@ def analisar_nivel(nivel):
             )
         }
 
-    elif nivel >= 50:
+    elif nivel >= 35:
 
         return {
             "status": "ATENÇÃO",
@@ -275,8 +339,8 @@ def analisar_nivel(nivel):
 
 def analisar_potencia(potencia_atual, potencia_referencia):
 
-    limite_atencao = potencia_referencia * 0.90
-    limite_critico = potencia_referencia * 0.75
+    limite_atencao = potencia_referencia * 0.75
+    limite_critico = potencia_referencia * 0.50
 
     if potencia_atual >= limite_atencao:
 
@@ -323,7 +387,7 @@ def analisar_vazao(vazao_atual, vazao_referencia):
         / vazao_referencia
     ) * 100
 
-    if vazao_atual >= vazao_referencia * 0.90:
+    if vazao_atual >= vazao_referencia * 0.75:
 
         status = "NORMAL"
         classe = "normal"
@@ -333,7 +397,7 @@ def analisar_vazao(vazao_atual, vazao_referencia):
             "de referência do projeto."
         )
 
-    elif vazao_atual >= vazao_referencia * 0.75:
+    elif vazao_atual >= vazao_referencia * 0.50:
 
         status = "ATENÇÃO"
         classe = "atencao"
@@ -555,6 +619,15 @@ def gerar_dados_sistema():
 
         "origem":
             monitoramento["origem"],
+
+        "bomba_ativa":
+            monitoramento["bomba_ativa"],
+
+        "valvula":
+            monitoramento["valvula"],
+
+        "volume_total":
+            monitoramento["volume_total"],
 
         # ----------------------------------------------------
         # ANÁLISES
@@ -973,7 +1046,10 @@ def equipamentos():
                 f'{dados["vazao_referencia"]} L/s',
 
                 f'Desnível de referência: '
-                f'{dados["desnivel"]} m'
+                f'{dados["desnivel"]} m',
+
+                f'Volume acumulado: '
+                f'{dados["volume_total"]} L'
             ],
 
             "mensagem":
@@ -1030,6 +1106,39 @@ def equipamentos():
 
             "mensagem":
                 dados["analise_potencia"]["mensagem"]
+        },
+
+        {
+            "nome":
+                "Bomba",
+
+            "icone":
+                "🔧",
+
+            "estado":
+                "LIGADA" if dados["bomba_ativa"] else "DESLIGADA",
+
+            "classe":
+                "normal" if dados["bomba_ativa"] else "atencao",
+
+            "parametros": [
+
+                f'Estado: '
+                f'{"Abastecendo o reservatório" if dados["bomba_ativa"] else "Aguardando nível cair abaixo de 95%"}',
+
+                f'Válvula (registro): '
+                f'{dados["valvula"]}% aberta',
+
+                f'Nível atual: '
+                f'{dados["nivel_reservatorio"]}%',
+
+                "Liga em: <95%  —  Para em: ≥99%"
+            ],
+
+            "mensagem":
+                "A bomba está abastecendo o reservatório."
+                if dados["bomba_ativa"] else
+                "A bomba está desligada. O reservatório está na faixa de corte."
         }
     ]
 

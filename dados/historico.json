@@ -1,743 +1,5 @@
 [
     {
-        "nivel": 64,
-        "vazao": 9.5,
-        "temperatura": 38.6,
-        "rpm": 1556,
-        "tensao": 211.5,
-        "corrente": 10.4,
-        "potencia": 2.2,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:02:30"
-    },
-    {
-        "nivel": 71,
-        "vazao": 9.6,
-        "temperatura": 40.1,
-        "rpm": 1490,
-        "tensao": 222.5,
-        "corrente": 13.3,
-        "potencia": 2.96,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:02:48"
-    },
-    {
-        "nivel": 60,
-        "vazao": 10.9,
-        "temperatura": 36.2,
-        "rpm": 1484,
-        "tensao": 216.7,
-        "corrente": 9.2,
-        "potencia": 1.99,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:02:49"
-    },
-    {
-        "nivel": 95,
-        "vazao": 12.3,
-        "temperatura": 54.0,
-        "rpm": 1337,
-        "tensao": 223.0,
-        "corrente": 10.2,
-        "potencia": 2.27,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 54.0 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:02:50"
-    },
-    {
-        "nivel": 99,
-        "vazao": 12.5,
-        "temperatura": 40.3,
-        "rpm": 1406,
-        "tensao": 214.7,
-        "corrente": 10.5,
-        "potencia": 2.25,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:02:52"
-    },
-    {
-        "nivel": 47,
-        "vazao": 13.0,
-        "temperatura": 43.9,
-        "rpm": 1349,
-        "tensao": 212.4,
-        "corrente": 11.5,
-        "potencia": 2.44,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 47%."
-            }
-        ],
-        "horario": "01/10/2026 22:02:52"
-    },
-    {
-        "nivel": 47,
-        "vazao": 15.0,
-        "temperatura": 36.7,
-        "rpm": 1209,
-        "tensao": 227.4,
-        "corrente": 13.2,
-        "potencia": 3.0,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 47%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1209 RPM."
-            }
-        ],
-        "horario": "01/10/2026 22:02:54"
-    },
-    {
-        "nivel": 98,
-        "vazao": 10.4,
-        "temperatura": 52.0,
-        "rpm": 1550,
-        "tensao": 225.4,
-        "corrente": 13.4,
-        "potencia": 3.02,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 52.0 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:02:56"
-    },
-    {
-        "nivel": 48,
-        "vazao": 14.8,
-        "temperatura": 48.6,
-        "rpm": 1451,
-        "tensao": 228.3,
-        "corrente": 13.6,
-        "potencia": 3.1,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 48%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Temperatura acima do recomendado",
-                "mensagem": "A temperatura está em 48.6 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:05:13"
-    },
-    {
-        "nivel": 98,
-        "vazao": 15.0,
-        "temperatura": 48.1,
-        "rpm": 1348,
-        "tensao": 213.5,
-        "corrente": 13.6,
-        "potencia": 2.9,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Temperatura acima do recomendado",
-                "mensagem": "A temperatura está em 48.1 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:05:26"
-    },
-    {
-        "nivel": 25,
-        "vazao": 10.7,
-        "temperatura": 45.0,
-        "rpm": 1233,
-        "tensao": 212.9,
-        "corrente": 13.6,
-        "potencia": 2.9,
-        "status": "CRÍTICO",
-        "classe_status": "critico",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Nível do reservatório crítico",
-                "mensagem": "O nível do reservatório está em 25%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1233 RPM."
-            }
-        ],
-        "horario": "01/10/2026 22:05:30"
-    },
-    {
-        "nivel": 50,
-        "vazao": 9.4,
-        "temperatura": 37.6,
-        "rpm": 1574,
-        "tensao": 229.4,
-        "corrente": 10.3,
-        "potencia": 2.36,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 50%."
-            }
-        ],
-        "horario": "01/10/2026 22:05:34"
-    },
-    {
-        "nivel": 38,
-        "vazao": 8.0,
-        "temperatura": 52.4,
-        "rpm": 1468,
-        "tensao": 230.0,
-        "corrente": 11.6,
-        "potencia": 2.67,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 38%."
-            },
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 52.4 °C."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.0 L/s."
-            }
-        ],
-        "horario": "01/10/2026 22:05:36"
-    },
-    {
-        "nivel": 85,
-        "vazao": 11.6,
-        "temperatura": 46.8,
-        "rpm": 1280,
-        "tensao": 212.5,
-        "corrente": 13.5,
-        "potencia": 2.87,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Temperatura acima do recomendado",
-                "mensagem": "A temperatura está em 46.8 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:05:38"
-    },
-    {
-        "nivel": 57,
-        "vazao": 8.7,
-        "temperatura": 54.0,
-        "rpm": 1222,
-        "tensao": 216.0,
-        "corrente": 10.2,
-        "potencia": 2.2,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 57%."
-            },
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 54.0 °C."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.7 L/s."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1222 RPM."
-            }
-        ],
-        "horario": "01/10/2026 22:05:39"
-    },
-    {
-        "nivel": 43,
-        "vazao": 9.7,
-        "temperatura": 40.4,
-        "rpm": 1200,
-        "tensao": 219.7,
-        "corrente": 10.2,
-        "potencia": 2.24,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 43%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1200 RPM."
-            }
-        ],
-        "horario": "01/10/2026 22:05:41"
-    },
-    {
-        "nivel": 25,
-        "vazao": 9.6,
-        "temperatura": 41.8,
-        "rpm": 1488,
-        "tensao": 215.0,
-        "corrente": 9.3,
-        "potencia": 2.0,
-        "status": "CRÍTICO",
-        "classe_status": "critico",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Nível do reservatório crítico",
-                "mensagem": "O nível do reservatório está em 25%."
-            }
-        ],
-        "horario": "01/10/2026 22:05:44"
-    },
-    {
-        "nivel": 81,
-        "vazao": 11.0,
-        "temperatura": 43.1,
-        "rpm": 1317,
-        "tensao": 212.5,
-        "corrente": 12.8,
-        "potencia": 2.72,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:05:46"
-    },
-    {
-        "nivel": 82,
-        "vazao": 13.1,
-        "temperatura": 49.5,
-        "rpm": 1587,
-        "tensao": 225.8,
-        "corrente": 8.2,
-        "potencia": 1.85,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Temperatura acima do recomendado",
-                "mensagem": "A temperatura está em 49.5 °C."
-            }
-        ],
-        "horario": "01/10/2026 22:05:47"
-    },
-    {
-        "nivel": 73,
-        "vazao": 14.0,
-        "temperatura": 35.5,
-        "rpm": 1441,
-        "tensao": 214.4,
-        "corrente": 12.1,
-        "potencia": 2.59,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [],
-        "horario": "01/10/2026 22:05:49"
-    },
-    {
-        "nivel": 80,
-        "vazao": 10.8,
-        "temperatura": 52.5,
-        "rpm": 1400,
-        "tensao": 210.4,
-        "corrente": 9.9,
-        "potencia": 2.08,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 52.5 °C."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 22:09:28"
-    },
-    {
-        "nivel": 47,
-        "vazao": 8.2,
-        "temperatura": 44.0,
-        "rpm": 1440,
-        "tensao": 218.4,
-        "corrente": 9.2,
-        "potencia": 2.01,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 47%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.2 L/s."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 22:13:08"
-    },
-    {
-        "nivel": 47,
-        "vazao": 9.3,
-        "temperatura": 41.5,
-        "rpm": 1587,
-        "tensao": 211.9,
-        "corrente": 8.5,
-        "potencia": 1.8,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 47%."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 22:13:55"
-    },
-    {
-        "nivel": 81,
-        "vazao": 14.2,
-        "temperatura": 52.2,
-        "rpm": 1270,
-        "tensao": 213.3,
-        "corrente": 11.0,
-        "potencia": 2.35,
-        "status": "NORMAL",
-        "classe_status": "normal",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 52.2 °C."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 22:57:51"
-    },
-    {
-        "nivel": 34,
-        "vazao": 10.3,
-        "temperatura": 43.7,
-        "rpm": 1548,
-        "tensao": 227.1,
-        "corrente": 11.0,
-        "potencia": 2.5,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 34%."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 23:04:10"
-    },
-    {
-        "nivel": 42,
-        "vazao": 11.6,
-        "temperatura": 51.5,
-        "rpm": 1580,
-        "tensao": 228.6,
-        "corrente": 10.5,
-        "potencia": 2.4,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 42%."
-            },
-            {
-                "tipo": "critico",
-                "titulo": "Temperatura elevada",
-                "mensagem": "A temperatura está em 51.5 °C."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 23:04:14"
-    },
-    {
-        "nivel": 39,
-        "vazao": 8.2,
-        "temperatura": 39.2,
-        "rpm": 1316,
-        "tensao": 220.1,
-        "corrente": 11.7,
-        "potencia": 2.58,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 39%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.2 L/s."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 23:08:51"
-    },
-    {
-        "nivel": 29,
-        "vazao": 8.9,
-        "temperatura": 40.4,
-        "rpm": 1166,
-        "tensao": 212.1,
-        "corrente": 10.9,
-        "potencia": 2.31,
-        "status": "CRÍTICO",
-        "classe_status": "critico",
-        "alertas": [
-            {
-                "tipo": "critico",
-                "titulo": "Nível do reservatório crítico",
-                "mensagem": "O nível do reservatório está em 29%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.9 L/s."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1166 RPM."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "atencao",
-                "titulo": "Possível redução da disponibilidade hidráulica",
-                "mensagem": "O nível do reservatório e a vazão estão abaixo dos valores de referência do protótipo."
-            }
-        ],
-        "horario": "01/10/2026 23:12:35"
-    },
-    {
-        "nivel": 32,
-        "vazao": 8.1,
-        "temperatura": 41.6,
-        "rpm": 1219,
-        "tensao": 228.5,
-        "corrente": 10.4,
-        "potencia": 2.38,
-        "status": "ATENÇÃO",
-        "classe_status": "atencao",
-        "alertas": [
-            {
-                "tipo": "atencao",
-                "titulo": "Nível do reservatório baixo",
-                "mensagem": "O nível do reservatório está em 32%."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Vazão reduzida",
-                "mensagem": "A vazão atual é de 8.1 L/s."
-            },
-            {
-                "tipo": "atencao",
-                "titulo": "Rotação reduzida",
-                "mensagem": "A rotação atual é de 1219 RPM."
-            }
-        ],
-        "diagnosticos": [
-            {
-                "tipo": "normal",
-                "titulo": "Condições operacionais estáveis",
-                "mensagem": "Não foram identificadas combinações anormais entre os parâmetros monitorados."
-            }
-        ],
-        "horario": "01/10/2026 23:12:56"
-    },
-    {
-        "horario": "03/10/2026 18:25:35",
-        "nivel": 91.4,
-        "vazao": 7.55,
-        "potencia": 525.73,
-        "consumo": 0.36,
-        "energia": 6.19,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:25:36",
-        "nivel": 75.6,
-        "vazao": 7.64,
-        "potencia": 526.84,
-        "consumo": 0.44,
-        "energia": 5.48,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:25:37",
-        "nivel": 83.7,
-        "vazao": 8.26,
-        "potencia": 576.03,
-        "consumo": 0.25,
-        "energia": 5.99,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:26:09",
-        "nivel": 79.3,
-        "vazao": 7.62,
-        "potencia": 528.96,
-        "consumo": 0.28,
-        "energia": 6.79,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:26:35",
-        "nivel": 68.5,
-        "vazao": 7.61,
-        "potencia": 523.01,
-        "consumo": 0.29,
-        "energia": 7.03,
-        "status": "ACOMPANHAMENTO NECESSÁRIO",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:28:17",
-        "nivel": 94.9,
-        "vazao": 7.82,
-        "potencia": 532.66,
-        "consumo": 0.54,
-        "energia": 4.88,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:28:21",
-        "nivel": 94.5,
-        "vazao": 7.76,
-        "potencia": 528.59,
-        "consumo": 0.29,
-        "energia": 6.11,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:28:35",
-        "nivel": 90.5,
-        "vazao": 7.69,
-        "potencia": 535.88,
-        "consumo": 0.56,
-        "energia": 6.6,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
         "horario": "03/10/2026 18:28:36",
         "nivel": 81.3,
         "vazao": 7.8,
@@ -1024,6 +286,716 @@
         "potencia": 564.83,
         "consumo": 0.49,
         "energia": 5.28,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 19:29:11",
+        "nivel": 77.6,
+        "vazao": 8.25,
+        "potencia": 551.44,
+        "consumo": 0.4,
+        "energia": 4.13,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:28",
+        "nivel": 68.3,
+        "vazao": 5.65,
+        "potencia": 387.71,
+        "consumo": 0.37,
+        "energia": 3.74,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:31",
+        "nivel": 70.4,
+        "vazao": 5.73,
+        "potencia": 398.53,
+        "consumo": 0.31,
+        "energia": 4.13,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:32",
+        "nivel": 72.5,
+        "vazao": 5.66,
+        "potencia": 375.39,
+        "consumo": 0.37,
+        "energia": 5.56,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:34",
+        "nivel": 74.5,
+        "vazao": 5.92,
+        "potencia": 392.58,
+        "consumo": 0.53,
+        "energia": 4.81,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:56",
+        "nivel": 79.0,
+        "vazao": 5.88,
+        "potencia": 403.83,
+        "consumo": 0.58,
+        "energia": 4.77,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:57",
+        "nivel": 82.4,
+        "vazao": 6.32,
+        "potencia": 418.15,
+        "consumo": 0.47,
+        "energia": 3.66,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:57",
+        "nivel": 84.9,
+        "vazao": 6.41,
+        "potencia": 426.82,
+        "consumo": 0.54,
+        "energia": 4.96,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:58",
+        "nivel": 86.7,
+        "vazao": 6.38,
+        "potencia": 441.25,
+        "consumo": 0.58,
+        "energia": 6.09,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:20:59",
+        "nivel": 89.1,
+        "vazao": 7.04,
+        "potencia": 479.55,
+        "consumo": 0.55,
+        "energia": 3.88,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:21:00",
+        "nivel": 92.6,
+        "vazao": 6.84,
+        "potencia": 471.03,
+        "consumo": 0.53,
+        "energia": 6.62,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 20:21:01",
+        "nivel": 96.1,
+        "vazao": 8.01,
+        "potencia": 528.53,
+        "consumo": 0.42,
+        "energia": 5.34,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:47",
+        "nivel": 75.9,
+        "vazao": 6.62,
+        "potencia": 454.6,
+        "consumo": 0.37,
+        "energia": 4.64,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:48",
+        "nivel": 78.1,
+        "vazao": 6.8,
+        "potencia": 466.96,
+        "consumo": 0.45,
+        "energia": 5.99,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:50",
+        "nivel": 80.0,
+        "vazao": 6.75,
+        "potencia": 463.52,
+        "consumo": 0.58,
+        "energia": 4.57,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:50",
+        "nivel": 83.2,
+        "vazao": 6.41,
+        "potencia": 440.17,
+        "consumo": 0.32,
+        "energia": 4.95,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:51",
+        "nivel": 85.5,
+        "vazao": 6.36,
+        "potencia": 436.74,
+        "consumo": 0.56,
+        "energia": 3.5,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:51",
+        "nivel": 87.8,
+        "vazao": 6.18,
+        "potencia": 424.38,
+        "consumo": 0.31,
+        "energia": 3.43,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:52",
+        "nivel": 89.5,
+        "vazao": 5.86,
+        "potencia": 402.41,
+        "consumo": 0.55,
+        "energia": 5.48,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:52",
+        "nivel": 92.6,
+        "vazao": 5.89,
+        "potencia": 404.47,
+        "consumo": 0.29,
+        "energia": 3.28,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:53",
+        "nivel": 94.0,
+        "vazao": 6.03,
+        "potencia": 414.08,
+        "consumo": 0.31,
+        "energia": 5.07,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:54",
+        "nivel": 97.5,
+        "vazao": 5.43,
+        "potencia": 372.88,
+        "consumo": 0.38,
+        "energia": 5.29,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:54",
+        "nivel": 99.0,
+        "vazao": 5.25,
+        "potencia": 360.52,
+        "consumo": 0.57,
+        "energia": 3.38,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:55",
+        "nivel": 98.2,
+        "vazao": 5.56,
+        "potencia": 381.81,
+        "consumo": 0.28,
+        "energia": 5.6,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:55",
+        "nivel": 96.6,
+        "vazao": 5.56,
+        "potencia": 381.81,
+        "consumo": 0.46,
+        "energia": 3.26,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:56",
+        "nivel": 95.7,
+        "vazao": 5.21,
+        "potencia": 357.77,
+        "consumo": 0.5,
+        "energia": 4.42,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:56",
+        "nivel": 93.9,
+        "vazao": 5.38,
+        "potencia": 369.44,
+        "consumo": 0.46,
+        "energia": 4.25,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:57",
+        "nivel": 97.4,
+        "vazao": 5.26,
+        "potencia": 361.2,
+        "consumo": 0.53,
+        "energia": 4.01,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:57",
+        "nivel": 99.7,
+        "vazao": 5.35,
+        "potencia": 367.38,
+        "consumo": 0.38,
+        "energia": 3.13,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:57",
+        "nivel": 97.6,
+        "vazao": 5.45,
+        "potencia": 374.25,
+        "consumo": 0.5,
+        "energia": 5.47,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:58",
+        "nivel": 96.1,
+        "vazao": 5.91,
+        "potencia": 405.84,
+        "consumo": 0.26,
+        "energia": 3.53,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:58",
+        "nivel": 96.3,
+        "vazao": 5.67,
+        "potencia": 389.36,
+        "consumo": 0.56,
+        "energia": 4.37,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:58",
+        "nivel": 100.0,
+        "vazao": 5.73,
+        "potencia": 393.48,
+        "consumo": 0.49,
+        "energia": 3.76,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 97.2,
+        "vazao": 5.73,
+        "potencia": 393.48,
+        "consumo": 0.56,
+        "energia": 4.55,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 94.9,
+        "vazao": 5.81,
+        "potencia": 398.97,
+        "consumo": 0.4,
+        "energia": 5.82,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 97.5,
+        "vazao": 6.15,
+        "potencia": 422.32,
+        "consumo": 0.45,
+        "energia": 2.97,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 97.7,
+        "vazao": 6.33,
+        "potencia": 434.68,
+        "consumo": 0.47,
+        "energia": 4.24,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 95.5,
+        "vazao": 6.28,
+        "potencia": 431.25,
+        "consumo": 0.52,
+        "energia": 3.41,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:26:59",
+        "nivel": 95.6,
+        "vazao": 6.4,
+        "potencia": 439.49,
+        "consumo": 0.55,
+        "energia": 4.29,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:00",
+        "nivel": 97.3,
+        "vazao": 6.37,
+        "potencia": 437.43,
+        "consumo": 0.35,
+        "energia": 3.87,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:01",
+        "nivel": 99.8,
+        "vazao": 6.2,
+        "potencia": 425.75,
+        "consumo": 0.31,
+        "energia": 3.31,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:01",
+        "nivel": 98.3,
+        "vazao": 6.27,
+        "potencia": 430.56,
+        "consumo": 0.52,
+        "energia": 3.63,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:02",
+        "nivel": 95.6,
+        "vazao": 5.93,
+        "potencia": 407.21,
+        "consumo": 0.32,
+        "energia": 5.48,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:03",
+        "nivel": 95.8,
+        "vazao": 5.53,
+        "potencia": 379.75,
+        "consumo": 0.31,
+        "energia": 5.45,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:03",
+        "nivel": 98.0,
+        "vazao": 5.62,
+        "potencia": 385.93,
+        "consumo": 0.58,
+        "energia": 5.77,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:04",
+        "nivel": 98.5,
+        "vazao": 5.73,
+        "potencia": 393.48,
+        "consumo": 0.53,
+        "energia": 5.55,
+        "status": "ATENÇÃO NECESSÁRIA",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:04",
+        "nivel": 95.4,
+        "vazao": 6.0,
+        "potencia": 412.02,
+        "consumo": 0.35,
+        "energia": 4.69,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:06",
+        "nivel": 94.1,
+        "vazao": 6.19,
+        "potencia": 425.07,
+        "consumo": 0.58,
+        "energia": 5.49,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:06",
+        "nivel": 97.1,
+        "vazao": 6.16,
+        "potencia": 423.01,
+        "consumo": 0.46,
+        "energia": 4.66,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:07",
+        "nivel": 99.7,
+        "vazao": 6.12,
+        "potencia": 420.26,
+        "consumo": 0.45,
+        "energia": 4.77,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:07",
+        "nivel": 98.7,
+        "vazao": 6.1,
+        "potencia": 418.89,
+        "consumo": 0.46,
+        "energia": 3.9,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:08",
+        "nivel": 96.2,
+        "vazao": 6.59,
+        "potencia": 452.54,
+        "consumo": 0.59,
+        "energia": 5.45,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:08",
+        "nivel": 94.3,
+        "vazao": 6.68,
+        "potencia": 458.72,
+        "consumo": 0.57,
+        "energia": 6.6,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:09",
+        "nivel": 96.5,
+        "vazao": 6.72,
+        "potencia": 461.46,
+        "consumo": 0.53,
+        "energia": 4.47,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:09",
+        "nivel": 99.5,
+        "vazao": 6.8,
+        "potencia": 466.96,
+        "consumo": 0.47,
+        "energia": 3.8,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:27:09",
+        "nivel": 96.8,
+        "vazao": 6.33,
+        "potencia": 434.68,
+        "consumo": 0.43,
+        "energia": 3.4,
+        "status": "ACOMPANHAMENTO NECESSÁRIO",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:28",
+        "nivel": 89.1,
+        "vazao": 7.32,
+        "potencia": 502.66,
+        "consumo": 0.41,
+        "energia": 5.14,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:29",
+        "nivel": 91.1,
+        "vazao": 7.46,
+        "potencia": 512.28,
+        "consumo": 0.45,
+        "energia": 4.75,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:29",
+        "nivel": 93.9,
+        "vazao": 7.14,
+        "potencia": 490.3,
+        "consumo": 0.47,
+        "energia": 6.69,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:30",
+        "nivel": 96.6,
+        "vazao": 7.42,
+        "potencia": 509.53,
+        "consumo": 0.49,
+        "energia": 7.47,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:30",
+        "nivel": 98.5,
+        "vazao": 7.56,
+        "potencia": 519.15,
+        "consumo": 0.38,
+        "energia": 6.02,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:31",
+        "nivel": 99.5,
+        "vazao": 7.3,
+        "potencia": 501.29,
+        "consumo": 0.58,
+        "energia": 5.77,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:31",
+        "nivel": 97.1,
+        "vazao": 7.47,
+        "potencia": 512.96,
+        "consumo": 0.55,
+        "energia": 3.89,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:31",
+        "nivel": 95.6,
+        "vazao": 7.15,
+        "potencia": 490.99,
+        "consumo": 0.59,
+        "energia": 3.54,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:31",
+        "nivel": 94.6,
+        "vazao": 7.05,
+        "potencia": 484.12,
+        "consumo": 0.3,
+        "energia": 4.12,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:32",
+        "nivel": 96.4,
+        "vazao": 7.07,
+        "potencia": 485.5,
+        "consumo": 0.3,
+        "energia": 5.68,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:32",
+        "nivel": 98.3,
+        "vazao": 6.98,
+        "potencia": 479.32,
+        "consumo": 0.43,
+        "energia": 3.46,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:41",
+        "nivel": 94.8,
+        "vazao": 7.2,
+        "potencia": 494.42,
+        "consumo": 0.26,
+        "energia": 5.42,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:42",
+        "nivel": 96.3,
+        "vazao": 7.23,
+        "potencia": 496.48,
+        "consumo": 0.36,
+        "energia": 6.2,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:42",
+        "nivel": 96.9,
+        "vazao": 7.58,
+        "potencia": 520.52,
+        "consumo": 0.51,
+        "energia": 4.61,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:31:43",
+        "nivel": 98.2,
+        "vazao": 7.34,
+        "potencia": 504.04,
+        "consumo": 0.57,
+        "energia": 3.69,
         "status": "SISTEMA NORMAL",
         "origem": "SIMULAÇÃO"
     }
