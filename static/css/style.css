@@ -1090,6 +1090,13 @@ body.page-leaving {
     opacity: .7;
 }
 
+.brand-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: .01ms !important;

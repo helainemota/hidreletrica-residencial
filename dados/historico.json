@@ -1,35 +1,5 @@
 [
     {
-        "horario": "03/10/2026 18:28:36",
-        "nivel": 81.3,
-        "vazao": 7.8,
-        "potencia": 544.47,
-        "consumo": 0.35,
-        "energia": 7.65,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:28:36",
-        "nivel": 87.8,
-        "vazao": 8.1,
-        "potencia": 542.65,
-        "consumo": 0.38,
-        "energia": 4.63,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
-        "horario": "03/10/2026 18:28:39",
-        "nivel": 85.6,
-        "vazao": 7.56,
-        "potencia": 512.36,
-        "consumo": 0.54,
-        "energia": 5.0,
-        "status": "SISTEMA NORMAL",
-        "origem": "SIMULAÇÃO"
-    },
-    {
         "horario": "03/10/2026 18:28:40",
         "nivel": 92.0,
         "vazao": 7.53,
@@ -996,6 +966,36 @@
         "potencia": 504.04,
         "consumo": 0.57,
         "energia": 3.69,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:56:42",
+        "nivel": 100.0,
+        "vazao": 7.77,
+        "potencia": 533.57,
+        "consumo": 0.33,
+        "energia": 6.29,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:56:43",
+        "nivel": 96.8,
+        "vazao": 7.84,
+        "potencia": 538.37,
+        "consumo": 0.33,
+        "energia": 5.34,
+        "status": "SISTEMA NORMAL",
+        "origem": "SIMULAÇÃO"
+    },
+    {
+        "horario": "05/10/2026 21:56:43",
+        "nivel": 93.6,
+        "vazao": 7.61,
+        "potencia": 522.58,
+        "consumo": 0.31,
+        "energia": 6.89,
         "status": "SISTEMA NORMAL",
         "origem": "SIMULAÇÃO"
     }
